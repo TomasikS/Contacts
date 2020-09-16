@@ -1,0 +1,32 @@
+<div class="mat-elevation-z2">
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource"  >
+    <ng-container matColumnDef="firstname">
+      <th mat-header-cell *matHeaderCellDef> FIRSTNAME </th>
+      <td mat-cell *matCellDef="let element"> {{element.firstname}}  
+        
+      
+           <button (click)="deleteContact(element.id)" class="btn btn-danger" style="margin-left: 20px"  >DELETE</button> 
+               <button (click)="contactDetails(element.id)" class="btn btn-info" style="margin-left: 20px">DETAILS</button>
+              <button (click)="updateContact( element.id)" class="btn btn-info" style="margin-left: 20px">UPDATE</button>
+      </td>
+    
+      </ng-container>
+       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  <mat-paginator  #paginatorA [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+
+</div> 
+
+
+
+
+
+ 
+
+     
+
+ 
